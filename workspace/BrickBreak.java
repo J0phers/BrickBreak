@@ -10,7 +10,6 @@ import java.awt.Color;
 
 import java.awt.Font;
 import java.awt.Graphics;
-import java.awt.Graphics2D;
 import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -206,18 +205,10 @@ public class BrickBreak extends JPanel implements KeyListener, ActionListener {
 	public void keyPressed(KeyEvent e) {
 		if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
 			play = true;
-			if (player.getVelocity() == 0)
-				player.addVelocity(8);
-			else {
-				player.addVelocity(4);
-			}
+			player.addVelocity(10);
 		} else if (e.getKeyCode() == KeyEvent.VK_LEFT) {
 			play = true;
-			if (player.getVelocity() == 0)
-				player.addVelocity(-8);
-			else {
-				player.addVelocity(-4);
-			}
+			player.addVelocity(-10);
 		}
 
 		if (e.getKeyCode() == KeyEvent.VK_ENTER) {

@@ -2,88 +2,84 @@ import java.awt.*;
 
 public class Paddle {
 
-	private int xPos;
-	private int yPos;
-	private int width;
-	private int height;
-	private int velocity;
+    private int xPos;          // The current X position of the paddle
+    private int yPos;          // The current Y position of the paddle
+    private int width;         // The width of the paddle
+    private int height;        // The height of the paddle
+    private int velocity;      // The velocity of the paddle, controls its movement speed
 
-	public Paddle (int xPos, int yPos, int width, int height) {
-		this.xPos = xPos;
-		this.yPos = yPos;
-		this.width = width;
-		this.height = height;
-		this.velocity = 1;
-	}
+    // Constructor to initialize the paddle with given position, width, height, and default velocity
+    public Paddle (int xPos, int yPos, int width, int height) {
+        this.xPos = xPos;       // Set the initial X position
+        this.yPos = yPos;       // Set the initial Y position
+        this.width = width;     // Set the paddle width
+        this.height = height;   // Set the paddle height
+        this.velocity = 1;      // Default velocity is set to 1 (can be changed later)
+    }
+    
+    public int getX() {
+        return xPos;
+    }
 
+    public void setX(int xP) {
+        this.xPos = xP;
+    }
 
-	public int getX() {
-		return xPos;
-	}
+    public int getY() {
+        return yPos;
+    }
 
-	public void setX(int xP) {
-		this.xPos = xP;
-	}
+    public void setY(int yP) {
+        this.yPos = yP;
+    }
 
-	public int getY() {
-		return yPos;
-	}
+    public int getWidth() {
+        return width;
+    }
 
-	public void setY(int yP) {
-		this.yPos = yP;
-	}
+    public void setWidth(int widthh) {
+        this.width = widthh;
+    }
 
-	public int getWidth() {
-		return width;
-	}
+    public int getHeight() {
+        return height;
+    }
 
-	public void setWidth(int widthh) {
-		this.width = widthh;
-	}
+    public void setHeight(int heightt) {
+        this.height = heightt;
+    }
 
-	public int getHeight() {
-		return height;
-	}
+    public int getVelocity() {
+        return velocity;
+    }
 
-	public void setHeight(int heightt) {
-		this.height = heightt;
-	}
+    public void setVelocity(int velocityy) {
+        this.velocity = velocityy;
+    }
 
-	public int getVelocity() {
-		return velocity;
-	}
+    public void reverseX(){
+        velocity *= -2;  // Reverse the velocity by multiplying by -2 (or changing direction)
+    }
 
-	public void setVelocity(int velocityy) {
-		this.velocity = velocityy;
-	}
+    // Method to draw the paddle on the screen using Graphics
+    public void draw (Graphics g) {
+        g.setColor(Color.red);          // Set the color of the paddle to red
+        g.drawRect(xPos, yPos, width, height);  // Draw the paddle as a rectangle
+    }
 
-	public void reverseX(){
-		velocity *=-2;
-	}
+    // Method to move the paddle based on its current velocity
+    public void move() {
+        xPos += velocity;  // Update the X position by adding the velocity
+        if(velocity > 0) {
+            velocity--;      // Slow down the paddle when moving to the right
+        }
+        if(velocity < 0) {
+            velocity++;      // Slow down the paddle when moving to the left
+        }
+    }
 
-
-
-	public void draw (Graphics g) {
-		g.setColor(Color.red);
-		g.drawRect(xPos, yPos, width, height);
-	}
-
-
-	public void move() {
-		xPos += velocity;
-		if(velocity > 0) {
-			velocity --;
-		}
-		if(velocity < 0) {
-			velocity ++;
-		}
-	}
-
-	
-	public void addVelocity(int add) {
-		velocity += add;
-	}
-
-	
-
+    // Method to increase or decrease the paddle's velocity
+    public void addVelocity(int add) {
+        velocity += add;   // Adjust the velocity by adding a specified value
+    }
 }
