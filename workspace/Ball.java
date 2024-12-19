@@ -13,7 +13,7 @@
 	 private int yPos;
 	 private int size;
 	 private int xVelocity;
-	 private int yVelocity;
+	 private int yVelocity; 
  
 	 // Constructor to initialize the ball's position, size, and set default velocities for movement
 	 public Ball(int x, int y, int getSize) {
@@ -43,7 +43,7 @@
 	 public int getSize() {
 		 return size;
 	 }
- 
+
 	 public void setSize(int sizee) {
 		 this.size = sizee;
 	 }
@@ -84,4 +84,3 @@
 		 yPos += yVelocity;   // Update y position by yVelocity
 	 }
  }
- 

@@ -1,3 +1,10 @@
+/*  
+ * Class author: Jophie Chan
+ * Date created: 12/2/2024
+ * General description: This class represents a Paddle object with properties such as position, size, and velocity. 
+ * It includes methods to manipulate and render the paddle on the screen, such as moving, drawing, and reversing its direction.
+ */
+
 import java.awt.*;
 
 public class Paddle {
